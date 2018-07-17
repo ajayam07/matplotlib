@@ -44,8 +44,16 @@ plt.hist(population_ages, bins, histtype='bar', rwidth=0.8)
 plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Interesting Graph\nCheck it out')
-plt.legend()
 plt.show()
+
+
+### Scatter Plots
+
+
+
+
+
+
 
 
 
