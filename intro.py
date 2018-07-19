@@ -280,7 +280,13 @@ def graph_data(stock):
                                                                       unpack=True,
                                                                       converters={0: bytespdate2num('%Y-%m-%d')})
     ax1.plot_date(date, closep, '-', label='Price')
-    ax1.fill_between(date, closep, closep[0], alpha = 0.3)
+
+    ax1.plot([],[], linewidth=5, label='Loss', color='r', alpha=0.5)
+    ax1.plot([],[], linewidth=5, label='Gain', color='g', alpha=0.5)
+
+    ax1.fill_between(date, closep, closep[0],where=(closep > closep[0]),facecolors='g', alpha=0.3)
+    ax1.fill_between(date, closep, closep[0],where=(closep < closep[0]),facecolors='r', alpha=0.3)
+
     for label in ax1.xaxis.get_ticklabels():
         label.set_rotation(45)
     ax1.grid(True, color='g', linestyle='-', linewidth=0.5)
@@ -299,6 +305,8 @@ def graph_data(stock):
 
 graph_data('TWTR')
 
+
+### Spine & Horizontal Lines
 
 
 
